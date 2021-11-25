@@ -21,7 +21,6 @@ namespace ClassISBN3
                 {
                     multiplicacion = numeros[i] * posicion;
                     sumatoria += multiplicacion;
-                    multiplicacion = 0;
                     posicion--;
                 }
 
@@ -34,6 +33,30 @@ namespace ClassISBN3
                     return false;
                 }
 
+            }
+            else if(numeros.Length == 13)
+            {
+                for(int i = 0; i < numeros.Length; i++)
+                {
+                    if(numeros[i] % 2 == 0)
+                    {
+                        multiplicacion = numeros[i] * 3;
+                    }
+                    else
+                    {
+                        multiplicacion = numeros[i] * 1;
+                    }
+                    sumatoria += multiplicacion;
+                }
+
+                if(sumatoria % 10 == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             else
             {
